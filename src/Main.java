@@ -2,14 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Author author = new Author("Курт", "Воннегут");
+        Author author2 = new Author("Оскар", "Уайльд");
+        Book book = new Book(author, 1969, "Бойня №5");
+        Book book2 = new Book(author2, 1980, "Портрет Дориана Грея");
+        book2.setPublicationYear(1999);
     }
 }
