@@ -1,3 +1,4 @@
+import java.util.Objects;
 public class Book {
     private int publicationYear;
     private String bookName;
@@ -20,4 +21,25 @@ public class Book {
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        Book c2 = (Book) other;
+        return bookName.equals(c2.bookName);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(bookName);
+    }
+
+    @Override
+    public String toString() {
+        return this.author + " Год публикации книги - " + this.publicationYear + ", Название книги - " + this.bookName;
+    }
+
+
 }
