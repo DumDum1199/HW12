@@ -17,6 +17,7 @@ public class Author {
         return this.lastName;
 
     }
+
     @Override
     public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
