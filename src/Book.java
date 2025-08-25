@@ -25,11 +25,15 @@ public class Book {
 
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
+        if (this == other) return true;
+        if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
         Book c2 = (Book) other;
-        return bookName.equals(c2.bookName);
+        String str = String.valueOf(publicationYear);
+
+        return Objects.equals(publicationYear, c2.publicationYear) &&
+                Objects.equals(bookName, c2.bookName);
     }
 
     @Override

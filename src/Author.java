@@ -1,4 +1,5 @@
 import java.util.Objects;
+
 public class Author {
     private String name;
     private String lastName;
@@ -20,11 +21,13 @@ public class Author {
 
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
+        if (this == other) return true;
+        if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
         Author c2 = (Author) other;
-        return name.equals(c2.name);
+        return Objects.equals(name, c2.name) &&
+                Objects.equals(lastName, c2.lastName);
     }
 
     @Override
@@ -36,7 +39,6 @@ public class Author {
     public String toString() {
         return "Имя автора - " + this.name + ", Фамилия автора - " + this.lastName;
     }
-
 
 
 }
