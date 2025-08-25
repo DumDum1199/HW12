@@ -5,7 +5,10 @@ public class Main {
         Author author = new Author("Курт", "Воннегут");
         Author author2 = new Author("Оскар", "Уайльд");
         Book book = new Book(author, 1969, "Бойня №5");
-        Book book2 = new Book(author2, 1980, "Портрет Дориана Грея");
+        Book book2 = new Book(author, 1980, "Портрет Дориана Грея");
         book2.setPublicationYear(1999);
+        System.out.println(book2);
+        System.out.println(author.equals(author2));
+        System.out.println(book.equals(book2));
     }
 }
