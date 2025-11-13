@@ -1,4 +1,5 @@
 import java.util.Objects;
+
 public class Book {
     private int publicationYear;
     private String bookName;
@@ -14,7 +15,7 @@ public class Book {
         return this.bookName;
     }
 
-    public Author getAuthorName(){
+    public Author getAuthorName() {
         return this.author;
     }
 
@@ -36,12 +37,12 @@ public class Book {
         String pubYear = String.valueOf(publicationYear);
 
         return Objects.equals(publicationYear, c2.publicationYear) &&
-                Objects.equals(bookName, c2.bookName);
+                Objects.equals(bookName, c2.bookName) && Objects.equals(author, c2.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName);
+        return Objects.hash(bookName, publicationYear, author);
     }
 
     @Override
